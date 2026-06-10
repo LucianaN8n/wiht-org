@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join WIHT – Get Your International Credential</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c; --parchment: #f7f4ef; --gold: #b8973a; --gold-light: #e8d49a;
+    --sage: #4a5c4e; --cream: #fdfbf7; --muted: #7a7468;
+    --white: #ffffff; --rule: rgba(184,151,58,0.25);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(253,251,247,0.97); border-bottom: 1px solid var(--rule);
+    padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.15em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+
+  .hero {
+    background: var(--ink);
+    padding: 9rem 7vw 5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--white); margin-bottom: 1.25rem; line-height: 1.15; }
+  .hero p { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
+
+  .credential-preview {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,151,58,0.3);
+    padding: 2.5rem;
+    border-radius: 4px;
+  }
+
+  .cred-tag { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .cred-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--white); margin-bottom: 1.5rem; }
+
+  .cred-features { list-style: none; }
+  .cred-features li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(184,151,58,0.15);
+    font-size: 0.82rem; color: rgba(255,255,255,0.6);
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .cred-features li::before { content: '✓'; color: var(--gold); font-size: 0.8rem; }
+
+  /* STEPS */
+  .steps-section { padding: 6rem 7vw; background: var(--parchment); }
+
+  .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; margin-bottom: 3rem; }
+
+  .steps-flow {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 0; position: relative;
+  }
+
+  .step-flow-item { padding: 2rem 1.5rem; position: relative; }
+  .step-flow-item:not(:last-child)::after {
+    content: '→';
+    position: absolute; right: -0.5rem; top: 2rem;
+    color: var(--gold); font-size: 1rem; z-index: 1;
+  }
+
+  .step-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--gold); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .step-flow-item h3 { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .step-flow-item p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+  /* COURSES */
+  .courses-section { padding: 6rem 7vw; }
+  .courses-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--rule); margin-top: 3rem; }
+
+  .course-card {
+    background: var(--cream); padding: 2.5rem;
+    display: flex; flex-direction: column;
+  }
+
+  .course-tag { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .course-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .course-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; flex: 1; }
+
+  .course-meta { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .meta-item { font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 0.3rem; }
+
+  .btn-enroll {
+    background: var(--gold); color: var(--white);
+    padding: 0.75rem 1.5rem; border-radius: 2px;
+    text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em;
+    align-self: flex-start; transition: background 0.2s;
+  }
+  .btn-enroll:hover { background: #9d7e2e; }
+
+  /* FAQ */
+  .faq-section { padding: 6rem 7vw; background: var(--parchment); }
+
+  .faq-list { max-width: 700px; margin-top: 3rem; }
+
+  .faq-item {
+    border-bottom: 1px solid var(--rule);
+    padding: 1.5rem 0;
+  }
+
+  .faq-q { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .faq-a { font-size: 0.85rem; color: var(--muted); line-height: 1.8; }
+
+  footer { background: var(--ink); padding: 2rem 7vw; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+  footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .steps-flow { grid-template-columns: 1fr 1fr; }
+    .step-flow-item:not(:last-child)::after { display: none; }
+    .courses-grid { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">WIHT <span>·</span> World Institute</a>
+</nav>
+
+<div class="hero">
+  <div>
+    <p class="hero-eyebrow">For Practitioners</p>
+    <h1>Earn your international holistic therapy credential</h1>
+    <p>Join 60,000+ students trained through our affiliated programs. Get listed in the WIHT Global Directory and practice with confidence — in Brazil, the US, Europe, and beyond.</p>
+  </div>
+  <div class="credential-preview">
+    <p class="cred-tag">Flagship Credential</p>
+    <p class="cred-name">Senior International<br>Holistic Therapist</p>
+    <ul class="cred-features">
+      <li>Internationally recognized credential</li>
+      <li>Digital certificate with QR verification</li>
+      <li>Unique WIHT registration number</li>
+      <li>Verified listing in Global Directory</li>
+      <li>Seal of Excellence badge for your profile</li>
+      <li>Accepted for wellness center partnerships</li>
+      <li>Valid for online & in-person practice</li>
+    </ul>
+  </div>
+</div>
+
+<section class="steps-section">
+  <p class="section-eyebrow">The Path</p>
+  <h2 class="section-title">5 steps to your international credential</h2>
+
+  <div class="steps-flow">
+    <div class="step-flow-item">
+      <div class="step-icon">1</div>
+      <h3>Choose Your Course</h3>
+      <p>Select from our affiliated programs on Hotmart. Full access, live sessions included.</p>
+    </div>
+    <div class="step-flow-item">
+      <div class="step-icon">2</div>
+      <h3>Complete Training</h3>
+      <p>Finish all modules at your own pace. Live sessions are scheduled monthly.</p>
+    </div>
+    <div class="step-flow-item">
+      <div class="step-icon">3</div>
+      <h3>Submit Application</h3>
+      <p>Send your completion certificate and photo ID via email to contato@saberconsciente.com.br.</p>
+    </div>
+    <div class="step-flow-item">
+      <div class="step-icon">4</div>
+      <h3>Review (15 days)</h3>
+      <p>Our team reviews your application and assigns your unique WIHT registration number.</p>
+    </div>
+    <div class="step-flow-item">
+      <div class="step-icon">5</div>
+      <h3>Go Live</h3>
+      <p>Receive your digital credential and get your verified profile activated in the directory.</p>
+    </div>
+  </div>
+</section>
+
+<section class="courses-section">
+  <p class="section-eyebrow">Affiliated Programs</p>
+  <h2 class="section-title">Choose your path to certification</h2>
+
+  <div class="courses-grid">
+    <div class="course-card">
+      <p class="course-tag">Behavioral Science Track</p>
+      <h3 class="course-name">Terapeuta em Análise Comportamental</h3>
+      <p class="course-desc">Comprehensive training in behavioral analysis, CBT, ABA methodology, and applied behavioral science for therapeutic practice. Taught in Portuguese with live sessions.</p>
+      <div class="course-meta">
+        <span class="meta-item">🎓 Instituto Saber Consciente</span>
+        <span class="meta-item">🌐 Hotmart Platform</span>
+        <span class="meta-item">🎯 WIHT Credential Included</span>
+      </div>
+      <a href="https://go.hotmart.com/U89946513B" class="btn-enroll">Enroll Now →</a>
+    </div>
+
+    <div class="course-card">
+      <p class="course-tag">Neuroscience Track · Flagship</p>
+      <h3 class="course-name">Terapeuta em Neurociências Comportamentais</h3>
+      <p class="course-desc">Advanced training in behavioral neuroscience, neuroplasticity, and neuroscience-based therapeutic techniques. Graduates receive the Senior International Holistic Therapist credential.</p>
+      <div class="course-meta">
+        <span class="meta-item">🎓 Instituto Saber Consciente</span>
+        <span class="meta-item">🌐 Hotmart Platform</span>
+        <span class="meta-item">⭐ SIHT Credential Included</span>
+      </div>
+      <a href="https://go.hotmart.com/Q94931307D" class="btn-enroll">Enroll Now →</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <p class="section-eyebrow">FAQ</p>
+  <h2 class="section-title">Common questions</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <p class="faq-q">Is the WIHT credential recognized internationally?</p>
+      <p class="faq-a">Yes. WIHT is a private credentialing body incorporated in Wyoming, USA, and our credentials are recognized by partner institutions across the Americas and Europe. The Senior International Holistic Therapist (SIHT) credential is accepted by complementary therapy associations in multiple countries, including those in Brazil, the US, Portugal, and Argentina.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Can I practice in the United States with this credential?</p>
+      <p class="faq-a">Yes, as a holistic health practitioner or behavioral wellness coach — titles that are widely used and not regulated by the federal government in most US states. You may not use regulated titles such as Licensed Psychologist, LPC, or LCSW without the applicable state license. Many WIHT members practice online internationally, which opens access to the large Brazilian community in the US.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Does this credential allow clinical diagnosis?</p>
+      <p class="faq-a">No. WIHT credentials do not authorize clinical diagnosis in any country. Clinical diagnosis is a function reserved for licensed healthcare professionals (psychologists, physicians, or psychiatrists) under the laws of most jurisdictions. WIHT practitioners offer complementary therapeutic support, coaching, and integrative wellness services.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How long does the certification process take?</p>
+      <p class="faq-a">Once you complete your course and submit your application, the review process takes up to 15 business days. Your digital certificate and directory profile are activated simultaneously.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Are the courses in Portuguese?</p>
+      <p class="faq-a">Yes. All affiliated courses are taught in Brazilian Portuguese and hosted on the Hotmart platform. The WIHT credential itself is issued in English and Portuguese, making it suitable for international use.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024–2026 Saber Consciente Worldwide LLC · Wyoming, USA</p>
+  <p><a href="index.html">← Back to Home</a></p>
+</footer>
+
+</body>
+</html>

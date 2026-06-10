@@ -1,0 +1,21 @@
+title: WIHT — World Institute of Holistic Therapists
+description: Global credentialing body for holistic and integrative therapy practitioners.
+url: "https://lucianaN8n.github.io"
+baseurl: "/wiht-org"
+
+# Disable Jekyll theme (using custom HTML/CSS)
+theme: null
+
+# Include files
+include:
+  - "*.html"
+  - "*.css"
+  - "*.js"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - DEPLOY.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
