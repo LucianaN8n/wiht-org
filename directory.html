@@ -9,280 +9,126 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0f0e0c;
-    --parchment: #f7f4ef;
-    --gold: #b8973a;
-    --gold-light: #e8d49a;
-    --sage: #4a5c4e;
-    --cream: #fdfbf7;
-    --muted: #7a7468;
-    --white: #ffffff;
+    --ink: #0f0e0c; --parchment: #f7f4ef; --gold: #b8973a; --gold-light: #e8d49a;
+    --sage: #4a5c4e; --cream: #fdfbf7; --muted: #7a7468; --white: #ffffff;
     --rule: rgba(184,151,58,0.25);
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); }
 
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(253,251,247,0.97);
-    border-bottom: 1px solid var(--rule);
-    padding: 0 5vw;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
+    background: rgba(253,251,247,0.97); border-bottom: 1px solid var(--rule);
+    padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 64px;
   }
-
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem; font-weight: 600; letter-spacing: 0.15em;
-    color: var(--ink); text-decoration: none;
-  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.15em; color: var(--ink); text-decoration: none; }
   .nav-logo span { color: var(--gold); }
-
   .nav-links { display: flex; gap: 2rem; align-items: center; }
   .nav-links a { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
   .nav-cta { background: var(--gold) !important; color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: 2px; }
 
-  .page-header {
-    background: var(--ink);
-    padding: 8rem 7vw 4rem;
-    border-bottom: 1px solid rgba(184,151,58,0.2);
-  }
-
-  .page-header .eyebrow {
-    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 1rem;
-  }
-
-  .page-header h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300;
-    color: var(--white); margin-bottom: 0.75rem;
-  }
-
+  .page-header { background: var(--ink); padding: 8rem 7vw 4rem; border-bottom: 1px solid rgba(184,151,58,0.2); }
+  .page-header .eyebrow { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: var(--white); margin-bottom: 0.75rem; }
   .page-header p { font-size: 0.9rem; color: rgba(255,255,255,0.5); }
 
-  /* SEARCH BAR */
   .search-bar {
-    background: var(--parchment);
-    border-bottom: 1px solid var(--rule);
-    padding: 1.5rem 7vw;
-    display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+    background: var(--parchment); border-bottom: 1px solid var(--rule);
+    padding: 1.5rem 7vw; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
   }
-
   .search-input {
-    flex: 1; min-width: 220px;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--rule);
-    background: var(--white);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    color: var(--ink);
-    outline: none;
-    border-radius: 2px;
+    flex: 1; min-width: 220px; padding: 0.75rem 1rem;
+    border: 1px solid var(--rule); background: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--ink);
+    outline: none; border-radius: 2px;
   }
-
   .search-input:focus { border-color: var(--gold); }
-
   .search-select {
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--rule);
-    background: var(--white);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.82rem;
-    color: var(--muted);
-    outline: none;
-    border-radius: 2px;
-    cursor: pointer;
+    padding: 0.75rem 1rem; border: 1px solid var(--rule); background: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--muted);
+    outline: none; border-radius: 2px; cursor: pointer;
   }
-
   .search-btn {
-    background: var(--gold);
-    color: var(--white);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 2px;
-    font-size: 0.82rem;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
+    background: var(--gold); color: var(--white); padding: 0.75rem 1.5rem;
+    border: none; border-radius: 2px; font-size: 0.82rem; letter-spacing: 0.08em;
+    cursor: pointer; font-family: 'Inter', sans-serif;
   }
 
-  /* MAIN LAYOUT */
-  .dir-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    min-height: calc(100vh - 200px);
-  }
+  .dir-layout { display: grid; grid-template-columns: 260px 1fr; min-height: calc(100vh - 200px); }
 
-  /* SIDEBAR */
-  .sidebar {
-    background: var(--parchment);
-    border-right: 1px solid var(--rule);
-    padding: 2rem 1.5rem;
-  }
-
+  .sidebar { background: var(--parchment); border-right: 1px solid var(--rule); padding: 2rem 1.5rem; }
   .filter-group { margin-bottom: 2rem; }
-
-  .filter-label {
-    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 1rem; display: block;
-  }
-
-  .filter-option {
-    display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.4rem 0;
-    font-size: 0.82rem; color: var(--muted);
-    cursor: pointer;
-    border-bottom: 1px solid rgba(184,151,58,0.1);
-  }
-
+  .filter-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+  .filter-option { display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0; font-size: 0.82rem; color: var(--muted); cursor: pointer; border-bottom: 1px solid rgba(184,151,58,0.1); }
   .filter-option input { accent-color: var(--gold); }
+  .filter-count { margin-left: auto; font-size: 0.7rem; color: var(--gold); background: rgba(184,151,58,0.1); padding: 0.1rem 0.4rem; border-radius: 10px; }
 
-  .filter-count {
-    margin-left: auto;
-    font-size: 0.7rem;
-    color: var(--gold);
-    background: rgba(184,151,58,0.1);
-    padding: 0.1rem 0.4rem;
-    border-radius: 10px;
-  }
-
-  /* RESULTS */
   .results-area { padding: 2rem 3rem; }
-
-  .results-header {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .results-count {
-    font-size: 0.82rem; color: var(--muted);
-  }
-
+  .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--rule); }
+  .results-count { font-size: 0.82rem; color: var(--muted); }
   .results-count strong { color: var(--ink); }
 
-  .sort-select {
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--rule);
-    background: var(--white);
-    font-size: 0.78rem;
-    font-family: 'Inter', sans-serif;
-    color: var(--muted);
-    outline: none;
-    border-radius: 2px;
+  /* LOADING */
+  .loading-state {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 5rem 2rem; gap: 1rem;
   }
+  .spinner {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 2px solid var(--rule); border-top-color: var(--gold);
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-state p { font-size: 0.82rem; color: var(--muted); }
 
-  /* THERAPIST CARDS */
+  /* ERROR */
+  .error-state {
+    padding: 3rem; background: var(--parchment); border: 1px solid var(--rule);
+    border-radius: 4px; text-align: center;
+  }
+  .error-state p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+  .error-state small { font-size: 0.75rem; color: var(--muted); font-style: italic; }
+
+  /* THERAPIST ROWS */
   .therapist-list { display: flex; flex-direction: column; gap: 1px; background: var(--rule); }
-
   .therapist-row {
-    background: var(--cream);
-    display: grid;
-    grid-template-columns: 56px 1fr auto;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    align-items: center;
-    transition: background 0.15s;
+    background: var(--cream); display: grid;
+    grid-template-columns: 56px 1fr auto; gap: 1.5rem;
+    padding: 1.5rem; align-items: center; transition: background 0.15s;
   }
-
   .therapist-row:hover { background: var(--parchment); }
 
   .avatar {
     width: 52px; height: 52px; border-radius: 50%;
-    background: var(--sage);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; font-weight: 600; color: var(--white);
-    flex-shrink: 0;
+    background: var(--sage); display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600;
+    color: var(--white); flex-shrink: 0; overflow: hidden;
   }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
-  .therapist-info h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem; font-weight: 600;
-    margin-bottom: 0.2rem;
-  }
-
-  .therapist-meta {
-    font-size: 0.75rem; color: var(--gold);
-    letter-spacing: 0.06em; margin-bottom: 0.5rem;
-  }
-
+  .therapist-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .therapist-meta { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 0.5rem; }
   .therapist-tags-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-
-  .tag {
-    font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase;
-    background: var(--parchment);
-    border: 1px solid var(--rule);
-    color: var(--muted);
-    padding: 0.15rem 0.5rem; border-radius: 2px;
-  }
+  .tag { font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; background: var(--parchment); border: 1px solid var(--rule); color: var(--muted); padding: 0.15rem 0.5rem; border-radius: 2px; }
 
   .therapist-actions { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
-
-  .badge-verified {
-    font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
-    color: #5aab72;
-    display: flex; align-items: center; gap: 0.3rem;
-  }
-
+  .badge-verified { font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5aab72; display: flex; align-items: center; gap: 0.3rem; }
   .badge-verified::before { content: '✓'; }
-
   .reg-num { font-size: 0.65rem; color: var(--muted); font-family: monospace; }
-
-  .btn-profile {
-    background: transparent;
-    border: 1px solid var(--rule);
-    padding: 0.4rem 0.9rem;
-    font-size: 0.75rem;
-    color: var(--muted);
-    cursor: pointer;
-    border-radius: 2px;
-    font-family: 'Inter', sans-serif;
-    transition: all 0.15s;
-    text-decoration: none;
-  }
-
+  .btn-profile { background: transparent; border: 1px solid var(--rule); padding: 0.4rem 0.9rem; font-size: 0.75rem; color: var(--muted); cursor: pointer; border-radius: 2px; font-family: 'Inter', sans-serif; transition: all 0.15s; text-decoration: none; display: inline-block; }
   .btn-profile:hover { border-color: var(--gold); color: var(--gold); }
 
   /* JOIN CTA */
   .join-cta {
-    background: var(--sage);
-    margin: 3rem;
-    padding: 3rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-    align-items: center;
-    border-radius: 4px;
+    background: var(--sage); margin: 3rem; padding: 3rem;
+    display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; border-radius: 4px;
   }
-
-  .join-cta h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem; font-weight: 300; color: var(--white);
-    margin-bottom: 0.5rem;
-  }
-
+  .join-cta h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--white); margin-bottom: 0.5rem; }
   .join-cta p { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
-
-  .btn-gold {
-    background: var(--gold); color: var(--white);
-    padding: 0.875rem 2rem; border-radius: 2px;
-    text-decoration: none; font-size: 0.85rem;
-    letter-spacing: 0.08em; white-space: nowrap;
-    transition: background 0.2s;
-  }
-
+  .btn-gold { background: var(--gold); color: var(--white); padding: 0.875rem 2rem; border-radius: 2px; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.08em; white-space: nowrap; transition: background 0.2s; }
   .btn-gold:hover { background: #9d7e2e; }
 
-  footer {
-    background: var(--ink); padding: 2rem 7vw;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 1rem;
-  }
-
+  footer { background: var(--ink); padding: 2rem 7vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   footer p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
 
   @media (max-width: 900px) {
@@ -313,182 +159,64 @@
 </div>
 
 <div class="search-bar">
-  <input type="text" class="search-input" placeholder="Search by name, specialty, or city...">
-  <select class="search-select">
-    <option>All Countries</option>
-    <option>Brazil</option>
-    <option>United States</option>
-    <option>Portugal</option>
-    <option>Spain</option>
-    <option>Argentina</option>
-    <option>Colombia</option>
-    <option>United Kingdom</option>
+  <input type="text" class="search-input" id="searchInput" placeholder="Search by name, specialty, or city...">
+  <select class="search-select" id="filterCountry">
+    <option value="">All Countries</option>
+    <option value="Brazil">Brazil</option>
+    <option value="United States">United States</option>
+    <option value="Portugal">Portugal</option>
+    <option value="Spain">Spain</option>
+    <option value="Argentina">Argentina</option>
   </select>
-  <select class="search-select">
-    <option>All Languages</option>
-    <option>Portuguese</option>
-    <option>English</option>
-    <option>Spanish</option>
+  <select class="search-select" id="filterLang">
+    <option value="">All Languages</option>
+    <option value="Portuguese">Portuguese</option>
+    <option value="English">English</option>
+    <option value="Spanish">Spanish</option>
   </select>
-  <select class="search-select">
-    <option>All Specialties</option>
-    <option>Holistic Therapy</option>
-    <option>CBT / TCC</option>
-        <option>Behavioral Neuroscience</option>
-        <option>Energy Therapy</option>
-    <option>Transpersonal</option>
-  </select>
-  <select class="search-select">
-    <option>Online &amp; Presential</option>
-    <option>Online Only</option>
-    <option>Presential Only</option>
-  </select>
-  <button class="search-btn">Search</button>
+  <button class="search-btn" onclick="applyFilters()">Search</button>
 </div>
 
 <div class="dir-layout">
   <aside class="sidebar">
     <div class="filter-group">
-      <span class="filter-label">Credential Type</span>
-      <label class="filter-option"><input type="checkbox" checked> Senior Int'l HT <span class="filter-count">142</span></label>
-      <label class="filter-option"><input type="checkbox"> Behavioral Neuroscience <span class="filter-count">87</span></label>
-      <label class="filter-option"><input type="checkbox"> Certified Holistic HT <span class="filter-count">204</span></label>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Region</span>
-      <label class="filter-option"><input type="checkbox" checked> South America <span class="filter-count">198</span></label>
-      <label class="filter-option"><input type="checkbox"> North America <span class="filter-count">74</span></label>
-      <label class="filter-option"><input type="checkbox"> Europe <span class="filter-count">61</span></label>
-      <label class="filter-option"><input type="checkbox"> Other <span class="filter-count">22</span></label>
+      <span class="filter-label">Credential</span>
+      <label class="filter-option"><input type="checkbox" checked> Senior Int'l HT</label>
+      <label class="filter-option"><input type="checkbox" checked> Holistic Wellness</label>
+      <label class="filter-option"><input type="checkbox" checked> Behavioral Neuroscience</label>
     </div>
     <div class="filter-group">
       <span class="filter-label">Session Format</span>
-      <label class="filter-option"><input type="checkbox" checked> Online <span class="filter-count">312</span></label>
-      <label class="filter-option"><input type="checkbox"> In-person <span class="filter-count">155</span></label>
+      <label class="filter-option"><input type="checkbox" checked> Online</label>
+      <label class="filter-option"><input type="checkbox"> In-person</label>
     </div>
     <div class="filter-group">
       <span class="filter-label">Language</span>
-      <label class="filter-option"><input type="checkbox" checked> Portuguese <span class="filter-count">267</span></label>
-      <label class="filter-option"><input type="checkbox"> English <span class="filter-count">134</span></label>
-      <label class="filter-option"><input type="checkbox"> Spanish <span class="filter-count">98</span></label>
+      <label class="filter-option"><input type="checkbox" checked> Portuguese</label>
+      <label class="filter-option"><input type="checkbox"> English</label>
+      <label class="filter-option"><input type="checkbox"> Spanish</label>
     </div>
   </aside>
 
   <main class="results-area">
     <div class="results-header">
-      <p class="results-count">Showing <strong>355 verified practitioners</strong></p>
-      <select class="sort-select">
-        <option>Sort: Most Recent</option>
-        <option>Sort: Name A–Z</option>
-        <option>Sort: Country</option>
-      </select>
+      <p class="results-count" id="resultsCount">Loading practitioners...</p>
     </div>
 
-        <div class="therapist-list">
-
-      <div class="therapist-row">
-        <div class="avatar">TB</div>
-        <div class="therapist-info">
-          <h3>Tercio Marcos Casado Barbosa</h3>
-          <p class="therapist-meta">&#128205; Brazil &middot; Online &middot; Portuguese</p>
-          <div class="therapist-tags-row">
-            <span class="tag">Senior Int'l HT</span>
-            <span class="tag">Holistic Wellness Practitioner</span>
-          </div>
-        </div>
-        <div class="therapist-actions">
-          <span class="badge-verified">WIHT Verified</span>
-          <span class="reg-num">SIHT-2024-10170</span>
-          <a href="#" class="btn-profile">View Profile &rarr;</a>
-        </div>
+    <div id="therapistList">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading verified practitioners...</p>
       </div>
+    </div>
 
-      <div class="therapist-row">
-        <div class="avatar">TI</div>
-        <div class="therapist-info">
-          <h3>Teresa Imaculada Pereira</h3>
-          <p class="therapist-meta">&#128205; Brazil &middot; Online &middot; Portuguese</p>
-          <div class="therapist-tags-row">
-            <span class="tag">Senior Int'l HT</span>
-            <span class="tag">Holistic Wellness Practitioner</span>
-            <span class="tag">Behavioral Neuroscience</span>
-          </div>
-        </div>
-        <div class="therapist-actions">
-          <span class="badge-verified">WIHT Verified</span>
-          <span class="reg-num">SIHT-2024-09443</span>
-          <a href="#" class="btn-profile">View Profile &rarr;</a>
-        </div>
+    <div class="join-cta">
+      <div>
+        <h3>Are you a certified holistic therapist?</h3>
+        <p>Get your WIHT credential and be found by clients across the Americas, Europe, and beyond.</p>
       </div>
-
-      <div class="therapist-row">
-        <div class="avatar">NB</div>
-        <div class="therapist-info">
-          <h3>Nara L&uacute;cia Ferreira de Souza Barcelos</h3>
-          <p class="therapist-meta">&#128205; Brazil &middot; Online &middot; Portuguese</p>
-          <div class="therapist-tags-row">
-            <span class="tag">Senior Int'l HT</span>
-            <span class="tag">Holistic Wellness Practitioner</span>
-          </div>
-        </div>
-        <div class="therapist-actions">
-          <span class="badge-verified">WIHT Verified</span>
-          <span class="reg-num">SIHT-2024-07857</span>
-          <a href="#" class="btn-profile">View Profile &rarr;</a>
-        </div>
-      </div>
-
-      <div class="therapist-row">
-        <div class="avatar">JP</div>
-        <div class="therapist-info">
-          <h3>Jaqueline Maria Pereira</h3>
-          <p class="therapist-meta">&#128205; Brazil &middot; Online &middot; Portuguese</p>
-          <div class="therapist-tags-row">
-            <span class="tag">Senior Int'l HT</span>
-            <span class="tag">Holistic Wellness Practitioner</span>
-          </div>
-        </div>
-        <div class="therapist-actions">
-          <span class="badge-verified">WIHT Verified</span>
-          <span class="reg-num">SIHT-2024-07312</span>
-          <a href="#" class="btn-profile">View Profile &rarr;</a>
-        </div>
-      </div>
-
-      <div class="therapist-row">
-        <div class="avatar">MA</div>
-        <div class="therapist-info">
-          <h3>Maria Beatriz Almeida</h3>
-          <p class="therapist-meta">&#128205; Brazil &middot; Online &middot; Portuguese</p>
-          <div class="therapist-tags-row">
-            <span class="tag">Senior Int'l HT</span>
-            <span class="tag">Holistic Wellness Practitioner</span>
-          </div>
-        </div>
-        <div class="therapist-actions">
-          <span class="badge-verified">WIHT Verified</span>
-          <span class="reg-num">SIHT-2024-05671</span>
-          <a href="#" class="btn-profile">View Profile &rarr;</a>
-        </div>
-      </div>
-
-      <div class="therapist-row">
-        <div class="avatar">LC</div>
-        <div class="therapist-info">
-          <h3>Luis Cordeiro</h3>
-          <p class="therapist-meta">&#128205; Brazil &middot; Online &middot; Portuguese</p>
-          <div class="therapist-tags-row">
-            <span class="tag">Senior Int'l HT</span>
-            <span class="tag">Holistic Wellness Practitioner</span>
-            <span class="tag">Behavioral Neuroscience</span>
-          </div>
-        </div>
-        <div class="therapist-actions">
-          <span class="badge-verified">WIHT Verified</span>
-          <span class="reg-num">SIHT-2024-04746</span>
-          <a href="#" class="btn-profile">View Profile &rarr;</a>
-        </div>
-      </div>
+      <a href="https://go.hotmart.com/U106231100F" class="btn-gold">Get Certified →</a>
+    </div>
   </main>
 </div>
 
@@ -496,6 +224,188 @@
   <p>© 2024–2026 Saber Consciente Worldwide LLC · Wyoming, USA</p>
   <p>All practitioners are independently responsible for local regulatory compliance.</p>
 </footer>
+
+<script>
+// ============================================================
+// WIHT Directory — Wix Data API Integration
+// Reads from the "Afiliados" collection on ath.org.br
+// Filters: Internacional = true AND Fundador = true
+// ============================================================
+
+const WIX_API_BASE = 'https://www.ath.org.br/_api/wix-data/v2/items/query';
+const COLLECTION_ID = 'Afiliados';
+
+let allTherapists = [];
+
+async function fetchTherapists() {
+  try {
+    const response = await fetch(WIX_API_BASE, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        dataCollectionId: COLLECTION_ID,
+        query: {
+          filter: {
+            $and: [
+              { Internacional: { $eq: true } },
+              { Fundador: { $eq: true } }
+            ]
+          },
+          sort: [{ fieldName: "Listar ordem em que aparece no site", order: "ASC" }],
+          paging: { limit: 100 }
+        }
+      })
+    });
+
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+
+    const data = await response.json();
+    return data.dataItems || [];
+
+  } catch (err) {
+    console.error('Wix API error:', err);
+    return null;
+  }
+}
+
+function getInitials(name) {
+  if (!name) return '??';
+  const parts = name.trim().split(' ');
+  if (parts.length === 1) return parts[0][0].toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+function buildRegNum(item) {
+  const reg = item['Registro de Terapeuta'] || item['registro De Terapeuta Novo'] || '';
+  if (!reg) return 'SIHT-2024-00000';
+  return `SIHT-2024-${String(reg).padStart(5, '0')}`;
+}
+
+function buildTags(item) {
+  const tags = ['Senior Int\'l HT', 'Holistic Wellness Practitioner'];
+  if (item.titulo) tags.push(item.titulo);
+  if (item.etiqueta) tags.push(item.etiqueta);
+  return [...new Set(tags)].slice(0, 4);
+}
+
+function buildProfileUrl(item) {
+  const slug = (item['nomeCompleto'] || item['nome Completo'] || '')
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+  return `profile-${slug}.html`;
+}
+
+function buildLocation(item) {
+  const parts = [];
+  if (item['Cidade'] || item['Afiliados_cidade']) parts.push(item['Cidade'] || item['Afiliados_cidade']);
+  if (item['Estado']) parts.push(item['Estado']);
+  if (item['País']) parts.push(item['País']);
+  return parts.join(', ') || 'Brazil';
+}
+
+function buildLanguages(item) {
+  return item.idioma || 'Portuguese';
+}
+
+function renderTherapist(item) {
+  const name = item['nomeCompleto'] || item['nome Completo'] || 'Therapist';
+  const photo = item.foto || item.linksuafoto || '';
+  const initials = getInitials(name);
+  const regNum = buildRegNum(item);
+  const tags = buildTags(item);
+  const location = buildLocation(item);
+  const lang = buildLanguages(item);
+  const profileUrl = buildProfileUrl(item);
+
+  const avatarHtml = photo
+    ? `<div class="avatar"><img src="${photo}" alt="${name}" onerror="this.parentElement.textContent='${initials}'"></div>`
+    : `<div class="avatar">${initials}</div>`;
+
+  const tagsHtml = tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+  return `
+    <div class="therapist-row"
+         data-name="${name.toLowerCase()}"
+         data-country="${(item['País'] || 'Brazil').toLowerCase()}"
+         data-lang="${lang.toLowerCase()}">
+      ${avatarHtml}
+      <div class="therapist-info">
+        <h3>${name}</h3>
+        <p class="therapist-meta">📍 ${location} · Online · ${lang}</p>
+        <div class="therapist-tags-row">${tagsHtml}</div>
+      </div>
+      <div class="therapist-actions">
+        <span class="badge-verified">WIHT Verified</span>
+        <span class="reg-num">${regNum}</span>
+        <a href="${profileUrl}" class="btn-profile">View Profile →</a>
+      </div>
+    </div>`;
+}
+
+function renderError() {
+  document.getElementById('therapistList').innerHTML = `
+    <div class="error-state">
+      <p>Unable to load practitioners at this time.</p>
+      <p>Please try again later or contact <a href="mailto:contato@saberconsciente.com.br" style="color:var(--gold)">contato@saberconsciente.com.br</a></p>
+      <br><small>If you are the site administrator, ensure the Wix Data API is enabled for public access on ath.org.br.</small>
+    </div>`;
+  document.getElementById('resultsCount').textContent = 'Unable to load';
+}
+
+function applyFilters() {
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  const country = document.getElementById('filterCountry').value.toLowerCase();
+  const lang = document.getElementById('filterLang').value.toLowerCase();
+
+  const rows = document.querySelectorAll('.therapist-row');
+  let visible = 0;
+
+  rows.forEach(row => {
+    const nameMatch = !search || row.dataset.name.includes(search);
+    const countryMatch = !country || row.dataset.country.includes(country);
+    const langMatch = !lang || row.dataset.lang.includes(lang);
+    const show = nameMatch && countryMatch && langMatch;
+    row.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+
+  document.getElementById('resultsCount').innerHTML =
+    `Showing <strong>${visible} verified practitioner${visible !== 1 ? 's' : ''}</strong>`;
+}
+
+document.getElementById('searchInput').addEventListener('keyup', applyFilters);
+
+async function init() {
+  const items = await fetchTherapists();
+
+  if (items === null) {
+    renderError();
+    return;
+  }
+
+  if (items.length === 0) {
+    document.getElementById('therapistList').innerHTML = `
+      <div class="error-state">
+        <p>No practitioners found with Internacional or Fundador = true.</p>
+        <small>Check that the fields "Internacional" or "Fundador" are marked for the desired therapists in the Wix CMS.</small>
+      </div>`;
+    document.getElementById('resultsCount').textContent = '0 practitioners found';
+    return;
+  }
+
+  allTherapists = items;
+  const html = '<div class="therapist-list">' + items.map(renderTherapist).join('') + '</div>';
+  document.getElementById('therapistList').innerHTML = html;
+  document.getElementById('resultsCount').innerHTML =
+    `Showing <strong>${items.length} verified practitioner${items.length !== 1 ? 's' : ''}</strong>`;
+}
+
+init();
+</script>
 
 </body>
 </html>
